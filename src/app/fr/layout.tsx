@@ -8,8 +8,8 @@ import typography from "@/typography";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: typography.title.fr,
-  description: typography.title.fr,
+  title: "XXX3223",
+  description: "Site Description",
 };
 
 export default function RootLayout({

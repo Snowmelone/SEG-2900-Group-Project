@@ -1,7 +1,7 @@
 const typography = {
     title: {
-        "en": "Charlie Cuts | Professional Hair Salon",
-        "fr": "Charlie Cuts | Professional Hair Salon"
+        "en": "Lens | Prism Glasses",
+        "fr": "Lens | Prism Glasses"
     },
     description: {
         "en": "",
