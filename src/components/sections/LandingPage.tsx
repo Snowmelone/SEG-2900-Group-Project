@@ -1,42 +1,220 @@
-import { Button, Card, Image, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Navbar, NavbarBrand, NavbarContent, NavbarItem, useDisclosure } from '@nextui-org/react'
-import React, { useEffect, useState } from 'react'
-
-import '../gradients.css'
-import '../hero.css'
-
-
+import { delay } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import * as THREE from 'three';
 import { Jura } from 'next/font/google'
 import { IoIosMenu, IoMdClose } from 'react-icons/io'
+import { Button, Card } from '@nextui-org/react';
+
+import { FaCalendar } from "react-icons/fa";
+import { IoLibrary } from "react-icons/io5";
+import { IoIosPricetag } from "react-icons/io";
+import { FaQuestionCircle } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
+
 const jura = Jura({
     weight: '400',
     subsets: ['latin'],
 
 })
+const juraBold = Jura({
+    weight: '700',
+    subsets: ['latin'],
 
-
+})
 export default function LandingPage({
     language = "en"
 }: {
     language?: String
 }) {
     const [isScrollAtTop, setIsScrollAtTop] = useState(true);
-    const [selectedPage, setSelectedPage] = useState('#Home')
+    const [selectedPage, setSelectedPage] = useState('#Home');
+    const cubeRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        // Scene
+        const scene = new THREE.Scene();
+
+        // Camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        // Lighting
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(0, 1, 1).normalize();
+        scene.add(light);
+
+        // Object 
+        const cubeGeo = new THREE.BoxGeometry(3, 1, 3);
+        const cubeMaterial = new THREE.MeshStandardMaterial({ color: "#000000" });
+        const rotatingCube = new THREE.Mesh(cubeGeo, cubeMaterial);
+        rotatingCube.position.y = 1.5;
+        rotatingCube.position.z = 0.3;
+        rotatingCube.position.x = 0;
 
 
-    const [navBarOpen, setNavbarOpen] = useState(false)
+        rotatingCube.rotation.x = 0.5;
+        rotatingCube.rotation.y = 0.5;
+        scene.add(rotatingCube);
+
+        const glassMaterial = new THREE.MeshPhysicalMaterial({
+            roughness: 0.6, 
+            opacity: 0.2, 
+            transmission: 0.8, 
+            clearcoat: 0.5, 
+            ior: 1.5, 
+        });
+        const pedestalGeo = new THREE.BoxGeometry(4.5, 1.5, 4.5);
+        const pedestal = new THREE.Mesh(pedestalGeo, glassMaterial);
+        pedestal.position.y = 0.5;
+        pedestal.rotation.x = 0.5;
+        pedestal.rotation.y = 0.7;
+        scene.add(pedestal);
+
+        // Renderer with transparent background
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        if (cubeRef.current) {
+            cubeRef.current.appendChild(renderer.domElement);
+        }
+
+        // Resize function
+        const resizeRendererToDisplaySize = () => {
+            if (cubeRef.current) {
+                const width = cubeRef.current.clientWidth;
+                const height = cubeRef.current.clientHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            }
+        };
+
+        // Resize Observer
+        const resizeObserver = new ResizeObserver(() => {
+            resizeRendererToDisplaySize();
+        });
+
+        // Only observe if cubeRef.current is not null
+        if (cubeRef.current) {
+            resizeObserver.observe(cubeRef.current);
+        }
+
+        // Animation loop
+        const animate = () => {
+            requestAnimationFrame(animate);
+            rotatingCube.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        };
+        animate();
+
+        return () => {
+            if (cubeRef.current) {
+                cubeRef.current.removeChild(renderer.domElement);
+                resizeObserver.unobserve(cubeRef.current); // Clean up the observer
+            }
+            renderer.dispose();
+        };
+    }, []);
 
 
     function goToPage(page: string): void {
-        setSelectedPage(page)
+        setSelectedPage(page);
         document.querySelector(page)?.scrollIntoView({ behavior: 'smooth' });
     }
 
-
-
     return (
-        <div id='#' className='flex justify-center items-center h-[100dvh]  z-50  left-0 top-0 w-full'>
+        <div id='Home' className='flex justify-between items-center h-[100dvh] bg-gray-100  left-0 top-0 w-full'>
+            <div className='w-7/12 flex flex-col items-center text-start justify-center mt-24 '>
+                <div className='text-6xl flex flex-col space-y-3'>
+                    <div className={`text-start text-xl flex justify-start ${juraBold.className}`}>INVEST IN YOUR FUTURE</div>
+                    <div className='font-bold text-blue-400'>Saving &</div>
+                    <div className='font-bold'>investing are</div>
+                    <div className='font-bold flex space-x-4 pb-10'>
+                        <div>
+                            made
+                        </div>
+                        <div className='text-violet-400'>simple</div>
+                    </div>
+                    <div className='bg-gray-100  space-y-2'>
 
-          Landing
-        </div >
-    )
+                        <div className='flex  space-x-2 '>
+                            <Button className='flex flex-col bg-white  items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
+                                document.getElementById('Service')?.scrollIntoView({ behavior: 'smooth' });
+                            }}>
+                                <div className='flex flex-row items-center px-4 justify-between h-16 w-64'>
+
+                                    <div className={`$ flex font-bold items-center justify-between space-x-2`}> <FaCalendar></FaCalendar> <p>Our Services</p></div>
+                                    <div><FaArrowRightLong /></div>
+                                </div>
+                                <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>What We Do</div>
+                            </Button>
+                            <Button className='flex flex-col bg-white items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
+                                document.getElementById('Pests')?.scrollIntoView({ behavior: 'smooth' })
+                            }}>
+                                <div className='flex flex-row items-center px-4 justify-between h-16 w-64'> 
+
+                                    <div className={`$ flex font-bold items-center justify-between space-x-2`}> <IoLibrary></IoLibrary> <p>Goal</p></div>
+                                    <div><FaArrowRightLong /></div>
+                                </div>
+                                <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Useful Information</div>
+                            </Button>
+                        </div>
+                        <div className='flex space-x-2'>
+                            <Button className='flex flex-col bg-white items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
+                                document.getElementById('Pricing')?.scrollIntoView({ behavior: 'smooth' })
+                            }}>
+                                <div className='flex flex-row items-center px-4 justify-between h-16 w-64'>
+
+                                    <div className={`$ flex font-bold items-center justify-between space-x-2`}> <IoIosPricetag></IoIosPricetag> <p>Pricing</p></div>
+                                    <div><FaArrowRightLong /></div>
+                                </div>
+                                <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Price Comparison</div>
+                            </Button>
+                            <Button className='flex bg-white flex-col items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
+                                document.getElementById('Qna')?.scrollIntoView({ behavior: 'smooth' })
+                            }}>
+                                <div className='flex flex-row items-center px-4 justify-between h-16 w-64'>
+
+                                    <div className={`$ flex font-bold items-center justify-between space-x-2`}> <FaQuestionCircle></FaQuestionCircle> <p>Q&A</p></div>
+                                    <div><FaArrowRightLong /></div>
+                                </div>
+                                <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Often Asked Questions</div>
+                            </Button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div className='w-5/12 h-full bg-white flex flex-col justify-center pt-52 items-center'>
+                <div className={`${jura.className} text-2xl`}>Prism Glasses</div>
+                <div ref={cubeRef} className='w-full h-96' />
+                <div className='h-2/6 w-full flex flex-col items-center space-y-4'>
+                    <div className='flex justify-between w-3/6'>
+                        <div>
+                            <div className={`text-sm text-gray-400`}>Active Users</div>
+                            <div className={`font-bold text-xl text-purple-400`}>
+                                5000+
+                            </div>
+                        </div>
+                        <div>
+                            <div className={`text-sm text-gray-400`}>Active Users</div>
+                            <div className={`font-bold text-xl text-blue-400`}>
+                                5000+
+                            </div>
+                        </div>
+                    </div>
+                    <div className='max-w-[500px] flex justify-center text-center w-full text-gray-400'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+
+                    <div className='flex space-x-6'>
+                            <Button className='text-white bg-black'>Buy Now</Button>
+                            <Button variant='bordered'>View Prices</Button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    );
 }
