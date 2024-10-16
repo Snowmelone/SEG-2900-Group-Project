@@ -34,8 +34,8 @@ export default function Features({
 
 
     return (
-        <div id='#' className='flex justify-center items-center  z-50 fixed left-0 top-0 w-full'>
-
+        <div id='#' className='flex justify-center items-center h-[100dvh] z-50 left-0 top-0 w-full'>
+            features
          
         </div >
     )
