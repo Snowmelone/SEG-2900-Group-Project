@@ -58,7 +58,7 @@ export default function Header({
     }, []);
 
     return (
-        <div id='#' className='flex justify-center items-center  z-50 fixed left-0 top-0 w-full'>
+        <div id='#' className='flex justify-center items-center  z-[999999] fixed left-0 top-0 w-full'>
 
             <header className='flex-1 hidden md:flex flex-row justify-center items-center'>
                 <Card className={`w-full rounded-none flex-1 flex flex-row justify-center items-center py-2 px-6   ${isScrollAtTop ? 'bg-transparent shadow-none mt-5' : 'bg-white/10 blurrybg shadow-md text-gray-800'} font-bold `}>
@@ -91,7 +91,7 @@ export default function Header({
                     </div>
                 </Card>
             </header>
-            {!navBarOpen && <button className='h-24 md:hidden flex  items-center justify-between space-x-4 text-6xl text-[#d4af37]' onClick={() => {
+            {!navBarOpen && <button className='h-24 md:hidden flex  items-center justify-between space-x-4 text-6xl text-black' onClick={() => {
                 setNavbarOpen(!navBarOpen)
             }}>
                 <IoIosMenu className=''></IoIosMenu>
@@ -99,7 +99,7 @@ export default function Header({
             </button>}
             {navBarOpen && <header className='flex-1 md:hidden flex h-screen  flex-col justify-center items-start z-20 bg-gray-700/90'>
                 <div className='h-24 flex flex-col w-full items-center justify-start space-x-4  text-6xl px-6 py-4 '>
-                    <button className='h-24 flex  items-center justify-between space-x-4 text-6xl text-[#d4af37]' onClick={() => {
+                    <button className='h-24 flex  items-center justify-between space-x-4 text-6xl text-black' onClick={() => {
                         setNavbarOpen(!navBarOpen)
                     }}>
                         <IoIosMenu className=''></IoIosMenu>

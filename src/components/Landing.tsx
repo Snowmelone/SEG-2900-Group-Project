@@ -8,6 +8,8 @@ import Features from './sections/Features'
 import GoalPage from './sections/GoalPage'
 import Pricing from './sections/Pricing'
 import TeamPage from './sections/TeamPage'
+import TopEndCap from './sections/EndCaps/TopEndCap'
+import BottomEndCap from './sections/EndCaps/BottomEndCap'
 
 export default function Landing({
     language = "en"
@@ -16,11 +18,18 @@ export default function Landing({
 }) {
     return (
         <NextUIProvider>
-            <div className='flex flex-col min-h-[100vh] overflow-x-hidden '>
+            <div className='flex flex-col min-h-[100vh]  overflow-x-hidden '>
                 <Header language={language} />
+
               <LandingPage/>
-              <GoalPage/>
+
               <Features/>
+              <div className='mt-16 md:block hidden'>
+
+              <BottomEndCap/>
+              </div>
+              <GoalPage/>
+              <TopEndCap/>
               <Pricing/>
               <TeamPage/>
                     

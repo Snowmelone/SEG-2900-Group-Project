@@ -121,21 +121,57 @@ export default function LandingPage({
     }
 
     return (
-        <div id='Home' className='flex justify-between items-center h-[100dvh] bg-gray-100  left-0 top-0 w-full'>
-            <div className='w-7/12 flex flex-col items-center text-start justify-center mt-24 '>
-                <div className='text-6xl flex flex-col space-y-3'>
-                    <div className={`text-start text-xl flex justify-start ${juraBold.className}`}>INVEST IN YOUR FUTURE</div>
+        <div id='Home' className='flex md:flex-row  flex-col-reverse justify-between items-center  bg-gray-50  left-0 top-0 w-full'>
+             <div className='lg:w-6/12 w-full h-full bg-white flex flex-col justify-center md:pt-64 pt-32 pb-32 items-center'>
+                <div className={`${jura.className} text-2xl`}>Prism Glasses</div>
+                <div ref={cubeRef} className='w-full h-96' />
+                <div className=' w-full flex flex-col items-center space-y-4'>
+                    <div className='flex justify-between w-3/6'>
+                        <div>
+                            <div className={`text-sm text-gray-400`}>Active Users</div>
+                            <div className={`font-bold text-xl text-purple-400`}>
+                                5000+
+                            </div>
+                        </div>
+                        <div>
+                            <div className={`text-sm text-gray-400`}>Active Users</div>
+                            <div className={`font-bold text-xl text-blue-400`}>
+                                5000+
+                            </div>
+                        </div>
+                    </div>
+                    <div className='max-w-[500px] flex justify-center text-center w-full text-gray-400'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+
+                    <div className='flex space-x-6'>
+                            <Button className='text-white bg-black'>Buy Now</Button>
+                            <Button variant='bordered'>View Prices</Button>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div className='lg:w-6/12 w-full flex flex-col  items-center text-start justify-center md:mt-16 mt-32 '>
+            
+                <div className='md:text-6xl text-5xl flex flex-col max-w-[400px] md:max-w-full text-center md:text-center space-y-3'>
+
+                    <div className={`md:text-start text-center text-xl flex md:justify-center justify-center ${juraBold.className}`}>INVEST IN YOUR FUTURE</div>
                     <div className='font-bold text-blue-400'>Saving &</div>
                     <div className='font-bold'>investing are</div>
-                    <div className='font-bold flex space-x-4 pb-10'>
+                    <div className='font-bold flex justify-center space-x-4 '>
                         <div>
                             made
                         </div>
                         <div className='text-violet-400'>simple</div>
                     </div>
-                    <div className='bg-gray-100  space-y-2'>
+                    <div className='text-lg md:ml-8 max-w-[500px] w-full pb-8'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    </div>
+                    <Card className='bg-blue-300 hidden md:flex w-full   justify-center space-y-2 p-4'>
 
-                        <div className='flex  space-x-2 '>
+                        <div className='flex justify-center w-full ml-4 space-x-2 '>
                             <Button className='flex flex-col bg-white  items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
                                 document.getElementById('Service')?.scrollIntoView({ behavior: 'smooth' });
                             }}>
@@ -179,42 +215,12 @@ export default function LandingPage({
                                 <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Often Asked Questions</div>
                             </Button>
                         </div>
-                    </div>
+                    </Card>
 
                 </div>
 
             </div>
-            <div className='w-5/12 h-full bg-white flex flex-col justify-center pt-52 items-center'>
-                <div className={`${jura.className} text-2xl`}>Prism Glasses</div>
-                <div ref={cubeRef} className='w-full h-96' />
-                <div className='h-2/6 w-full flex flex-col items-center space-y-4'>
-                    <div className='flex justify-between w-3/6'>
-                        <div>
-                            <div className={`text-sm text-gray-400`}>Active Users</div>
-                            <div className={`font-bold text-xl text-purple-400`}>
-                                5000+
-                            </div>
-                        </div>
-                        <div>
-                            <div className={`text-sm text-gray-400`}>Active Users</div>
-                            <div className={`font-bold text-xl text-blue-400`}>
-                                5000+
-                            </div>
-                        </div>
-                    </div>
-                    <div className='max-w-[500px] flex justify-center text-center w-full text-gray-400'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-
-                    <div className='flex space-x-6'>
-                            <Button className='text-white bg-black'>Buy Now</Button>
-                            <Button variant='bordered'>View Prices</Button>
-
-                    </div>
-
-                </div>
-
-            </div>
+           
         </div>
     );
 }
