@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react'
 import '../gradients.css'
 import '../hero.css'
 
-
+import TeamGrid from '../library/teamGrid'
+import teamData from '@/data/teamData'
 import { Jura } from 'next/font/google'
 import { IoIosMenu, IoMdClose } from 'react-icons/io'
 const jura = Jura({
@@ -34,9 +35,17 @@ export default function TeamPage({
 
 
     return (
-        <div id='#' className='flex justify-center items-center h-[100dvh]  z-50  left-0 top-0 w-full'>
-            Team
-         
+        <div id='#' className='flex flex-col justify-center py-12 gridbg items-center text-center z-50  left-0 top-0 w-full'>
+           <div className='text-4xl font-semibold'>
+            Meet the Lens Team
+           </div>
+         <div className='text-gray-500'>
+            Our  philosophy is simple; hire great people and give them <br/> the ressources and support to do their best work.
+         </div>
+         <div className=' px-64'>
+
+            <TeamGrid teamData={teamData}/>
+         </div>
         </div >
     )
 }

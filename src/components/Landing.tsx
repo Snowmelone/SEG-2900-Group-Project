@@ -18,7 +18,7 @@ export default function Landing({
 }) {
     return (
         <NextUIProvider>
-            <div className='flex flex-col min-h-[100vh]  overflow-x-hidden '>
+            <div className='flex flex-col min-h-[100vh]  overflow-hidden '>
                 <Header language={language} />
 
               <LandingPage/>

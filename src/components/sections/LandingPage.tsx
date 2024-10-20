@@ -121,8 +121,8 @@ export default function LandingPage({
     }
 
     return (
-        <div id='Home' className='flex md:flex-row  flex-col-reverse justify-between items-center  bg-gray-50  left-0 top-0 w-full'>
-             <div className='lg:w-6/12 w-full h-full bg-white flex flex-col justify-center md:pt-64 pt-32 pb-32 items-center'>
+        <div id='Home' className='flex md:flex-row  flex-col-reverse justify-between items-center  bg-gray-50 gridbg left-0 top-0 w-full'>
+             <div className='lg:w-6/12 w-full h-full bg-white flex flex-col justify-center md:pt-64  pt-32 pb-32 items-center'>
                 <div className={`${jura.className} text-2xl`}>Prism Glasses</div>
                 <div ref={cubeRef} className='w-full h-96' />
                 <div className=' w-full flex flex-col items-center space-y-4'>
