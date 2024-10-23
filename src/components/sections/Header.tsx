@@ -77,10 +77,10 @@ export default function Header({
                         </div>
                         <div className='rounded-full  blurrybg border-2 border-gray-200/60 p-1 font-bold md:flex hidden'>
                             <Button className={`h-8 ${selectedPage !== "#Home" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold `} onClick={() => goToPage('#Home')}>Home</Button>
-                            <Button className={`h-8 ${selectedPage !== "#Benefits" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Benefits')}>Goal</Button>
-                            <Button className={`h-8 ${selectedPage !== "#Service" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Service')}>Service</Button>
+                            <Button className={`h-8 ${selectedPage !== "#Goal" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Goal')}>Goal</Button>
+                            <Button className={`h-8 ${selectedPage !== "#Features" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Features')}>Features</Button>
                             <Button className={`h-8 ${selectedPage !== "#Pricing" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Pricing')}>Pricing</Button>
-                            <Button className={`h-8 ${selectedPage !== "#ContactUs" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#ContactUs')}>Our Team</Button>
+                            <Button className={`h-8 ${selectedPage !== "#Team" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Team')}>Our Team</Button>
                         </div>
 
                         {/*  */}

@@ -34,7 +34,7 @@ export default function Pricing({
 
 
     return (
-        <div id='#' className='flex justify-center items-center h-[100dvh] z-50  left-0 top-0 w-full'>
+        <div id='Pricing' className='flex justify-center items-center h-[100dvh] z-50  left-0 top-0 w-full'>
            <button>pricing btn</button>
 
          

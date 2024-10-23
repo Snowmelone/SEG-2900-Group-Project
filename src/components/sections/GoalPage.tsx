@@ -37,7 +37,7 @@ export default function GoalPage({
 
 
     return (
-        <div id='#' className='flex flex-col py-20 justify-center items-center bg-blue-50  z-50 left-0 top-0 w-full relative'>
+        <div id='Goal' className='flex flex-col py-20 justify-center items-center bg-blue-50  z-50 left-0 top-0 w-full relative'>
          
         </div >
     )

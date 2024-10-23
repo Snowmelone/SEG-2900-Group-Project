@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 
 import '../gradients.css'
 import '../hero.css'
-
+import FeatureGrid from '../library/featuresGrid'
+import featureData from '@/data/featureData'
 
 import { Jura } from 'next/font/google'
 import { IoIosMenu, IoMdClose } from 'react-icons/io'
@@ -34,9 +35,8 @@ export default function Features({
 
 
     return (
-        <div id='#' className='flex justify-center items-center h-[100dvh] z-50 left-0 top-0 w-full'>
-            features
-         
+        <div id='Features' className='flex justify-center items-center  z-50 left-0 top-0 w-full'>
+          
         </div >
     )
 }
