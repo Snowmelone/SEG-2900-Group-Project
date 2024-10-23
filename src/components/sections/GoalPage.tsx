@@ -38,18 +38,7 @@ export default function GoalPage({
 
     return (
         <div id='#' className='flex flex-col py-20 justify-center items-center bg-blue-50  z-50 left-0 top-0 w-full relative'>
-            <div className='absolute w-full'>
-            {/* <BottomEndCap/> */}
-            </div>
-
-            <div className={`text-6xl font-bold text-gradient-purple`}>
-               Future Goals
-            </div>
-                
-
-            <div className='flex justify-center w-full  top-10'>
-                <InfoGrid gridinfo={featureinfo} />
-            </div>
+         
         </div >
     )
 }
