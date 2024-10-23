@@ -122,7 +122,7 @@ export default function LandingPage({
 
     return (
         <div id='Home' className='flex md:flex-row  flex-col-reverse justify-between items-center  bg-gray-50 gridbg left-0 top-0 w-full'>
-             <div className='lg:w-6/12 w-full h-full bg-white flex flex-col justify-center md:pt-64  pt-32 pb-32 items-center'>
+             <div className='lg:w-6/12 w-full h-[100dvh] bg-white flex flex-col justify-center md:pt-64  pt-32 pb-32 items-center'>
                 <div className={`${jura.className} text-2xl`}>Prism Glasses</div>
                 <div ref={cubeRef} className='w-full h-96' />
                 <div className=' w-full flex flex-col items-center space-y-4'>
@@ -153,7 +153,7 @@ export default function LandingPage({
                 </div>
 
             </div>
-            <div className='lg:w-6/12 w-full flex flex-col  items-center text-start justify-center md:mt-16 mt-32 '>
+            <div className='lg:w-6/12 w-[50vw] flex flex-col  items-center text-start justify-center md:mt-16 mt-32 '>
             
                 <div className='md:text-6xl text-5xl flex flex-col max-w-[400px] md:max-w-full text-center md:text-center space-y-3'>
 
@@ -169,7 +169,7 @@ export default function LandingPage({
                     <div className='text-lg md:ml-8 max-w-[500px] w-full pb-8'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     </div>
-                    <Card className='bg-blue-300 hidden md:flex w-full   justify-center space-y-2 p-4'>
+                    <Card className='bg-blue-300/30 hidden md:flex w-full   justify-center space-y-2 p-4'>
 
                         <div className='flex justify-center w-full ml-4 space-x-2 '>
                             <Button className='flex flex-col bg-white  items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
