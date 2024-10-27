@@ -10,7 +10,6 @@ import Pricing from './sections/Pricing'
 import TeamPage from './sections/TeamPage'
 import TopEndCap from './sections/EndCaps/TopEndCap'
 import BottomEndCap from './sections/EndCaps/BottomEndCap'
-
 export default function Landing({
     language = "en"
 }: {
