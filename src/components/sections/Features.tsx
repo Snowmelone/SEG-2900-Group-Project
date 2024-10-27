@@ -36,7 +36,7 @@ export default function Features({
 
     return (
         <div id='Features' className='flex justify-center items-center  z-50 left-0 top-0 w-full'>
-          
+           <FeatureGrid featureData={featureData}/>
         </div >
     )
 }
