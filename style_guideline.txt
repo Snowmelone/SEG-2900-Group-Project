@@ -1,10 +1,13 @@
 ---- STYLE GUIDELINE ----
+The overall look and feel should be futuristic/modern while also minimalist. There should be a sense of 3D with the models but the interface portion should be very simple and straightforward.
+The website should be simple and easy to follow for users.
 
 !! NOTE TO TA:
 We used React/Tailwind so our css & Js is mostly Inside the components themselves ex. in Header We have the JS for the Href goTo Function at the top and Inside the html in that folder we do inline styling using TailwindCss.
 ^ In this guideline I will provide the tailwind values and what they stand for (bg-black or backgroundColor: "#000000")
 
 -- Theme Color --
+For Lens, we aim to use colours that present a very calm and soothing atmosphere.
 
 Theme Type: Light (white / gray)
 Primary: Blue (blue-400 or #60a5fa)
