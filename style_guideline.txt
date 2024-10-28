@@ -1,0 +1,28 @@
+---- STYLE GUIDELINE ----
+
+!! NOTE TO TA:
+We used React/Tailwind so our css & Js is mostly Inside the components themselves ex. in Header We have the JS for the Href goTo Function at the top and Inside the html in that folder we do inline styling using TailwindCss.
+^ In this guideline I will provide the tailwind values and what they stand for (bg-black or backgroundColor: "#000000")
+
+-- Theme Color --
+
+Theme Type: Light (white / gray)
+Primary: Blue (blue-400 or #60a5fa)
+Secondary: Purple (purple-400 or #c084fc)
+Tertiary: Black
+
+-- Typography --
+
+Font: Jura
+
+Main Header: text-6xl -> font-size: 3.75rem; or 60px & line-height: 1;
+Sub Headers: text-5xl -> font-size: 3rem; or 48px & line-height: 1;
+Informative Text: text-md -> font-size: 1rem; or 16px & line-height: 1.5rem; /* 24px */
+
+
+If you need to look at our general CSS look in /src/app/global or /src/components/hero and /gradients
+
+If you want to see the main place where the usual sites 'html' would be look in /src/components/Landing.tsx -> here you will see how the site is organized
+
+Like said in the note our js is in each of the TSX files 
+
