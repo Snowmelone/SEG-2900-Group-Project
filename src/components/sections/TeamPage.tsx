@@ -35,8 +35,17 @@ export default function TeamPage({
 
 
     return (
-        <div id='Team' className='flex flex-col justify-center py-12 gridbg items-center text-center z-50  left-0 top-0 w-full'>
-          
+        <div id='#' className='flex flex-col justify-center py-12 gridbg items-center text-center z-50  left-0 top-0 w-full'>
+           <div className='text-4xl font-semibold'>
+            Meet the Lens Team
+           </div>
+         <div className='text-gray-500'>
+            Our  philosophy is simple; hire great people and give them <br/> the ressources and support to do their best work.
+         </div>
+         <div className=' '>
+
+            <TeamGrid teamData={teamData}/>
+         </div>
         </div >
     )
 }
