@@ -42,7 +42,7 @@ export default function TeamPage({
          <div className='text-gray-500'>
             Our  philosophy is simple; hire great people and give them <br/> the ressources and support to do their best work.
          </div>
-         <div className=' '>
+         <div className=' px-8'>
 
             <TeamGrid teamData={teamData}/>
          </div>
