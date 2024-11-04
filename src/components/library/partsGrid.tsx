@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import '../gradients.css'
 import '../hero.css'
+import { Button } from '@nextui-org/react';
 
 
 export default function PartsGrid(props: any) {
@@ -24,6 +25,9 @@ export default function PartsGrid(props: any) {
                             </div>
                             <div className="flex justify-start px-3 space-x-2  items-center">
                                 <h1 className="text-xl  text-gray-600">{item.price} $</h1>
+                            </div>
+                            <div className='mt-4 w-full'>
+                                <Button className='bg-black w-full text-white'>Select Part</Button>
                             </div>
                         </div>
                     </motion.div>

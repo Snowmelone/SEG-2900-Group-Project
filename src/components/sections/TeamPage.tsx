@@ -35,7 +35,7 @@ export default function TeamPage({
 
 
     return (
-        <div id='#' className='flex flex-col justify-center py-12 gridbg items-center text-center z-50  left-0 top-0 w-full'>
+        <div id='Team' className='flex flex-col justify-center py-12 gridbg items-center text-center z-50  left-0 top-0 w-full'>
            <div className='text-4xl font-semibold'>
             Meet the Lens Team
            </div>

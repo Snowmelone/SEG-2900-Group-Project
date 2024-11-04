@@ -13,61 +13,46 @@ import { FaArrowUp } from "react-icons/fa";
 const partsInfo = [
     {
         id: 1,
-        title: 'Provide Help',
+        title: 'Multifocal',
         icon: RxCross2,
-        price: 299
+        price: 299,
+        image: '/lenstest1.png'
     }, 
     {
         id: 1,
-        title: 'Provide Help',
+        title: 'Photochromic',
         icon: RxCross2,
         price: 350
     }, 
     {
         id: 1,
-        title: 'Provide Help',
+        title: 'Tinted',
         icon: RxCross2,
         price: 100
     },    {
         id: 1,
-        title: 'Provide Help',
+        title: 'High index',
         icon: RxCross2,
         price: 20
     }, 
     {
         id: 1,
-        title: 'Provide Help',
+        title: 'Digital',
         icon: RxCross2,
         price: 299
     },   {
         id: 1,
-        title: 'Provide Help',
+        title: 'Polarised',
         icon: RxCross2,
         price: 299
     }, 
     {
         id: 1,
-        title: 'Provide Help',
+        title: 'Prism',
         icon: RxCross2,
         price: 350
     }, 
-    {
-        id: 1,
-        title: 'Provide Help',
-        icon: RxCross2,
-        price: 100
-    },    {
-        id: 1,
-        title: 'Provide Help',
-        icon: RxCross2,
-        price: 20
-    }, 
-    {
-        id: 1,
-        title: 'Provide Help',
-        icon: RxCross2,
-        price: 299
-    }, 
+  
     
 ];
 

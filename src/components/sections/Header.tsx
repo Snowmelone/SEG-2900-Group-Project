@@ -10,6 +10,7 @@ import { FaHome } from "react-icons/fa";
 import { TbBooks } from "react-icons/tb";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoStorefrontOutline } from "react-icons/io5";
+import { IoCartOutline } from "react-icons/io5";
 
 import { Jura } from 'next/font/google'
 import { IoIosMenu, IoMdClose } from 'react-icons/io'
@@ -86,6 +87,7 @@ export default function Header({
                         {/*  */}
                         <div className='flex items-center space-x-6 '>
                             <Button className={ `h-10 bg-black font-bold text-white hover:bg-gray-400 hover:text-black`}>Buy Product</Button>
+                            {/* <Button className='bg-transparent ' isIconOnly={true}><IoCartOutline className='h-16 w-6 '/></Button> */}
 
                         </div>
                     </div>
