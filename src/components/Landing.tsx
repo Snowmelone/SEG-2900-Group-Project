@@ -7,6 +7,7 @@ import LandingPage from './sections/LandingPage'
 import Features from './sections/Features'
 import GoalPage from './sections/GoalPage'
 import Pricing from './sections/Pricing'
+import Showcase from './sections/Showcase'
 import TeamPage from './sections/TeamPage'
 import TopEndCap from './sections/EndCaps/TopEndCap'
 import BottomEndCap from './sections/EndCaps/BottomEndCap'
@@ -21,7 +22,7 @@ export default function Landing({
                 <Header language={language} />
 
               <LandingPage/>
-
+<Showcase/>
               <Features/>
               <div className='mt-16 md:block hidden'>
 
