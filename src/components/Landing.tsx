@@ -21,18 +21,18 @@ export default function Landing({
             <div className='flex flex-col min-h-[100vh]  overflow-hidden '>
                 <Header language={language} />
 
-              <LandingPage/>
-<Showcase/>
-              <Features/>
-              <div className='mt-16 md:block hidden'>
+                <LandingPage />
+                <Showcase />
+                <Features />
+                <div className='mt-16 md:block hidden'>
 
-              <BottomEndCap/>
-              </div>
-              <GoalPage/>
-              <TopEndCap/>
-              <Pricing/>
-              <TeamPage/>
-                    
+                    <BottomEndCap />
+                </div>
+                <GoalPage />
+                <TopEndCap />
+                <Pricing />
+                <TeamPage />
+
             </div>
         </NextUIProvider>
     )

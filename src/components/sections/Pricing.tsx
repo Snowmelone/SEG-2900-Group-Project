@@ -29,6 +29,10 @@ export default function Pricing({
     const [selectedPart, setSelectedPart] = useState("Frames")
     const [navBarOpen, setNavbarOpen] = useState(false)
     const [currentData, setCurrentData] = useState(framesInfo)
+    const [curFrame, setCurFrame] = useState("Full-Rimmed")
+    const [curLens, setCurLens] = useState("Multifocal")
+    const [curTemple, setCurTemple] = useState("Skull")
+
     const [cart, setCard] = useState([
         {
             label: "Frame",
@@ -81,7 +85,7 @@ export default function Pricing({
                         <Image className='h-48' src='gucciex_.jpg' />
                     </div>
                 </div>
-                <div className='flex justify-center h-full items-center bg-black text-[#ffbf00]'>
+                <div className='flex justify-center h-full items-center bg-purple-gradient opacity-20  text-black'>
                     coming xx.xx.xxxx
                 </div>
             </Card>
@@ -115,14 +119,14 @@ export default function Pricing({
                                 />
                             </div>
                             <div className='h-full w-1/3 flex items-center justify-center'>
-                                Full-Rimmed
+                                {curFrame}
                             </div>
                             <div className='h-full w-1/3 flex-col items-center justify-center p-2 pr-4'>
                                 <div className='w-full flex justify-end'>
                                     Frames
                                 </div>
                                 <div className='w-full flex justify-end'>
-                                    $288
+                                    $120
                                 </div>
                             </div>
                         </Card>
@@ -135,14 +139,14 @@ export default function Pricing({
                                 />
                             </div>
                             <div className='h-full w-1/3 flex items-center justify-center'>
-                                Multifocal
+                               {curLens}
                             </div>
                             <div className='h-full w-1/3 flex-col items-center justify-center p-2 pr-4'>
                                 <div className='w-full flex justify-end'>
                                     Lens
                                 </div>
                                 <div className='w-full flex justify-end'>
-                                    $288
+                                    $70
                                 </div>
                             </div>
                         </Card>
@@ -155,14 +159,14 @@ export default function Pricing({
                                 />
                             </div>
                             <div className='h-full w-1/3 flex items-center justify-center'>
-                                Skull
+                                {curTemple}
                             </div>
                             <div className='h-full w-1/3 flex-col items-center justify-center p-2 pr-4'>
                                 <div className='w-full flex justify-end'>
                                     Temple
                                 </div>
                                 <div className='w-full flex justify-end'>
-                                    $288
+                                    $50
                                 </div>
                             </div>
                         </Card>
@@ -172,7 +176,7 @@ export default function Pricing({
                             </div>
 
                             <div>
-                                Total <br/> $999
+                                Total <br/> $240
                             </div>
                         </div>
                     </Card>
@@ -188,7 +192,7 @@ export default function Pricing({
                                 setSelectedPart(part.label)
                             }}>{part.label}</SelectItem>}
                         </Select>
-                        <PartsGrid partsInfo={currentData} />
+                        <PartsGrid partsInfo={currentData} setCurFrame={setCurFrame} setCurLens={setCurLens} setCurTemple={setCurTemple} selectedPart={selectedPart} curFrame={curFrame} curLens={curLens} curTemple={curTemple} />
                     </div>
                 </div>
             </div>

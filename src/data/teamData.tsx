@@ -37,7 +37,7 @@ const teamData = [
     }, {
         id: 2,
         title: 'Sam',
-        image: '/team4.jpg',
+        image: '/emo_sam.png',
         description: "Head Marketing Analyst",
         github: 'https://github.com/Antoy1234',
         linkedin: 'https://www.linkedin.com/in/anthani-legault-a4b19a283/',

@@ -134,19 +134,22 @@ export default function LandingPage({
                             </div>
                         </div>
                         <div>
-                            <div className={`text-sm text-gray-400`}>Active Users</div>
+                            <div className={`text-sm text-gray-400`}>Unique Combinations</div>
                             <div className={`font-bold text-xl text-blue-400`}>
-                                5000+
+                            1,000+ 
                             </div>
                         </div>
                     </div>
                     <div className='max-w-[500px] flex justify-center text-center w-full text-gray-400'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                    Join over 5,000 satisfied customers who have discovered the perfect blend of style and flexibility. Customize each part of your frames to fit your unique look, lifestyle, and vision needs. With options for frames, lenses, and temples, you’re in control of every detail.                    </div>
 
                     <div className='flex space-x-6'>
-                            <Button className='text-white bg-black'>Buy Now</Button>
-                            <Button variant='bordered'>View Prices</Button>
+                            <Button className='text-white bg-black'  onClick={() => {
+                                document.getElementById('Pricing')?.scrollIntoView({ behavior: 'smooth' })
+                            }}>Buy Now</Button>
+                            <Button variant='bordered'  onClick={() => {
+                                document.getElementById('Pricing')?.scrollIntoView({ behavior: 'smooth' })
+                            }}>View Prices</Button>
 
                     </div>
 
@@ -158,22 +161,22 @@ export default function LandingPage({
                 <div className='md:text-6xl text-5xl flex flex-col max-w-[400px] md:max-w-full text-center md:text-center space-y-3'>
 
                     <div className={`md:text-start text-center text-xl flex md:justify-center justify-center ${juraBold.className}`}>INVEST IN YOUR FUTURE</div>
-                    <div className='font-bold text-blue-400'>Saving &</div>
-                    <div className='font-bold'>investing are</div>
+                    <div className='font-bold text-blue-400'>Frames &</div>
+                    <div className='font-bold'>quality you</div>
                     <div className='font-bold flex justify-center space-x-4 '>
                         <div>
-                            made
+                        can
                         </div>
-                        <div className='text-violet-400'>simple</div>
+                        <div className='text-violet-400'>Trust</div>
                     </div>
                     <div className='text-lg md:ml-8 max-w-[500px] w-full pb-8'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    More than just eyewear—our frames offer the perfect balance of design, durability, and dependable quality.
                     </div>
                     <Card className='bg-blue-300/30 hidden md:flex w-full   justify-center space-y-2 p-4'>
 
                         <div className='flex justify-center w-full ml-4 space-x-2 '>
                             <Button className='flex flex-col bg-white  items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
-                                document.getElementById('Service')?.scrollIntoView({ behavior: 'smooth' });
+                                document.getElementById('Showcase')?.scrollIntoView({ behavior: 'smooth' });
                             }}>
                                 <div className='flex flex-row items-center px-4 justify-between h-16 w-64'>
 
@@ -183,7 +186,7 @@ export default function LandingPage({
                                 <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>What We Do</div>
                             </Button>
                             <Button className='flex flex-col bg-white items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
-                                document.getElementById('Pests')?.scrollIntoView({ behavior: 'smooth' })
+                                document.getElementById('Goal')?.scrollIntoView({ behavior: 'smooth' })
                             }}>
                                 <div className='flex flex-row items-center px-4 justify-between h-16 w-64'> 
 
@@ -205,14 +208,14 @@ export default function LandingPage({
                                 <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Price Comparison</div>
                             </Button>
                             <Button className='flex bg-white flex-col items-center px-4  h-16 w-64 cursor-pointer hover:bg-gray-100' onClick={() => {
-                                document.getElementById('Qna')?.scrollIntoView({ behavior: 'smooth' })
+                                document.getElementById('Team')?.scrollIntoView({ behavior: 'smooth' })
                             }}>
                                 <div className='flex flex-row items-center px-4 justify-between h-16 w-64'>
 
-                                    <div className={`$ flex font-bold items-center justify-between space-x-2`}> <FaQuestionCircle></FaQuestionCircle> <p>Q&A</p></div>
+                                    <div className={`$ flex font-bold items-center justify-between space-x-2`}> <FaQuestionCircle></FaQuestionCircle> <p>Team</p></div>
                                     <div><FaArrowRightLong /></div>
                                 </div>
-                                <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Often Asked Questions</div>
+                                <div className={`flex justify-start items-start text-start w-full ml-12 ${jura.className}`}>Meet the Lens Team</div>
                             </Button>
                         </div>
                     </Card>

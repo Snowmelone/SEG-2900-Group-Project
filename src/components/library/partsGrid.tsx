@@ -6,7 +6,14 @@ import { Button } from '@nextui-org/react';
 
 
 export default function PartsGrid(props: any) {
-    const { partsInfo } = props;
+    const { partsInfo, setCurFrame, setCurLens, setCurTemple, selectedPart, curFrame, curLens, curTemple } = props;
+    function SelectPart(part: any) {
+        if (selectedPart === "Frames") setCurFrame(part.title)
+        else if (selectedPart === "Lens") setCurLens(part.title)
+        else if (selectedPart === "Temple") setCurTemple(part.title)
+
+
+    }
 
     return (
         <div className="flex justify-center items-center w-full md:px-16">
@@ -17,9 +24,9 @@ export default function PartsGrid(props: any) {
                         initial={{ y: 100, opacity: 0 }}
                         transition={{ duration: 0.5, delay: item.delay }}>
                         <div className="pt-3 w-[200px] h  flex flex-col items-center  ">
-                                <div className="px-4   bg-gray-gradient rounded-full h-32 w-32 flex items-center justify-center">
-                                    <item.icon className="text-5xl  text-[#f1f1f1] " />
-                                </div>
+                            <div className={`px-4  ${selectedPart == "Frames" ? "bg-discount-gradient ": ""} ${selectedPart == "Lens" ? "bg-pink-gradient ": ""} ${selectedPart == "Temple" ? "bg-purple-gradient": ""} rounded-full h-32 w-32 flex items-center justify-center`}>
+                                <item.icon className="text-5xl   text-[#f1f1f1] " />
+                            </div>
                             <div className="flex justify-start px-3 space-x-2 py-3 items-center">
                                 <h1 className="text-xl font-bold text-gray-800">{item.title}</h1>
                             </div>
@@ -27,7 +34,17 @@ export default function PartsGrid(props: any) {
                                 <h1 className="text-xl  text-gray-600">{item.price} $</h1>
                             </div>
                             <div className='mt-4 w-full'>
-                                <Button className='bg-black w-full text-white'>Select Part</Button>
+                                {(curFrame !== item.title && curLens !== item.title && curTemple !== item.title) && (
+                                    <Button className='bg-black w-full text-white' onClick={() => {
+                                        SelectPart(item);
+                                    }}>
+                                        Select Part
+                                    </Button>
+                                )}
+                                 {((curFrame === item.title || curLens === item.title || curTemple === item.title) && 
+                                    <Button variant='bordered' className='bg-transparent w-full text-black' disabled={true}>
+                                        Selected
+                                    </Button>)}
                             </div>
                         </div>
                     </motion.div>

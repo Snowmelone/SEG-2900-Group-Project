@@ -8,38 +8,39 @@ import { LuLocateFixed } from "react-icons/lu";
 import { FaRegClock } from "react-icons/fa";
 import { IoIosInfinite } from "react-icons/io";
 import { FaArrowUp } from "react-icons/fa";
+import { GiChopsticks } from "react-icons/gi";
 
 
 const partsInfo = [
     {
         id: 1,
         title: 'Skull',
-        icon: RxCross2,
-        price: 299,
+        icon: GiChopsticks,
+        price: 25,
         image: 'templetest1.png'
     }, 
     {
         id: 1,
         title: 'Library',
-        icon: RxCross2,
-        price: 350
+        icon: GiChopsticks,
+        price: 25
     }, 
     {
         id: 1,
         title: 'Convertible',
-        icon: RxCross2,
-        price: 100
+        icon: GiChopsticks,
+        price: 25
     },    {
         id: 1,
         title: 'Riding bow',
-        icon: RxCross2,
-        price: 20
+        icon: GiChopsticks,
+        price: 25
     }, 
     {
         id: 1,
         title: 'Comfort Cable',
-        icon: RxCross2,
-        price: 299
+        icon: GiChopsticks,
+        price: 25
     },  
     
 ];

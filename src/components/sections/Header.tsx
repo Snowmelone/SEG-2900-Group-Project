@@ -78,15 +78,15 @@ export default function Header({
                         </div>
                         <div className='rounded-full  blurrybg border-2 border-gray-200/60 p-1 font-bold md:flex hidden'>
                             <Button className={`h-8 ${selectedPage !== "#Home" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold `} onClick={() => goToPage('#Home')}>Home</Button>
-                            <Button className={`h-8 ${selectedPage !== "#Goal" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Goal')}>Goal</Button>
                             <Button className={`h-8 ${selectedPage !== "#Features" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Features')}>Features</Button>
+                            <Button className={`h-8 ${selectedPage !== "#Goal" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Goal')}>Goal</Button>
                             <Button className={`h-8 ${selectedPage !== "#Pricing" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Pricing')}>Pricing</Button>
                             <Button className={`h-8 ${selectedPage !== "#Team" ? 'bg-transparent text-black rounded-full hover:bg-gray-200' : 'bg-black text-white rounded-full'} font-bold`} onClick={() => goToPage('#Team')}>Our Team</Button>
                         </div>
 
                         {/*  */}
                         <div className='flex items-center space-x-6 '>
-                            <Button className={ `h-10 bg-black font-bold text-white hover:bg-gray-400 hover:text-black`}>Buy Product</Button>
+                            <Button className={ `h-10 bg-black font-bold text-white hover:bg-gray-400 hover:text-black`} onClick={() => goToPage('#Pricing')}>Buy Product</Button>
                             {/* <Button className='bg-transparent ' isIconOnly={true}><IoCartOutline className='h-16 w-6 '/></Button> */}
 
                         </div>
