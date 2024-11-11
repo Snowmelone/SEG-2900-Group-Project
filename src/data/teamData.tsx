@@ -14,7 +14,7 @@ const teamData = [
     {
         id: 1,
         title: 'Rayyan',
-        image: '/team1.jpg',
+        image: '/rayyan.png',
         description: "Marketing Specialist",
         github: 'https://github.com/Antoy1234',
         linkedin: 'https://www.linkedin.com/in/anthani-legault-a4b19a283/',
@@ -22,7 +22,7 @@ const teamData = [
     }, {
         id: 2,
         title: 'Daniel',
-        image: '/team2.jpg',
+        image: '/daniel.png',
         description: "Senior Officing Liason ",
         github: 'https://github.com/Antoy1234',
         linkedin: 'https://www.linkedin.com/in/anthani-legault-a4b19a283/',
@@ -37,14 +37,14 @@ const teamData = [
     }, {
         id: 2,
         title: 'Sam',
-        image: '/emo_sam.png',
+        image: '/sam.png',
         description: "Head Marketing Analyst",
         github: 'https://github.com/Antoy1234',
         linkedin: 'https://www.linkedin.com/in/anthani-legault-a4b19a283/',
     }, {
         id: 3,
         title: 'Kian',
-        image: '/team5.jpg',
+        image: '/kian.png',
         description: "Head Graphic Designer ",
         github: 'https://github.com/Antoy1234',
         linkedin: 'https://www.linkedin.com/in/anthani-legault-a4b19a283/',

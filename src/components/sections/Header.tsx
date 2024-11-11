@@ -86,7 +86,7 @@ export default function Header({
 
                         {/*  */}
                         <div className='flex items-center space-x-6 '>
-                            <Button className={ `h-10 bg-black font-bold text-white hover:bg-gray-400 hover:text-black`} onClick={() => goToPage('#Pricing')}>Buy Product</Button>
+                            <Button className={ `h-10 bg-black font-bold text-white hover:bg-white hover:text-black`} variant='faded' onClick={() => goToPage('#Pricing')}>Get Started</Button>
                             {/* <Button className='bg-transparent ' isIconOnly={true}><IoCartOutline className='h-16 w-6 '/></Button> */}
 
                         </div>

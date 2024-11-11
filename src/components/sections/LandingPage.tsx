@@ -10,6 +10,7 @@ import { IoLibrary } from "react-icons/io5";
 import { IoIosPricetag } from "react-icons/io";
 import { FaQuestionCircle } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const jura = Jura({
     weight: '400',
@@ -31,37 +32,49 @@ export default function LandingPage({
     const cubeRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        // Scene
+        // Scene setup
         const scene = new THREE.Scene();
-
-        // Camera
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 5;
-
-        // Lighting
+    
         const light = new THREE.DirectionalLight(0xffffff, 1);
         light.position.set(0, 1, 1).normalize();
         scene.add(light);
-
-        // Object 
+    
+        // Load GLTF glasses model
+        const glftLoader = new GLTFLoader();
+        let glassesModel:any;
+        const gltfLoader = new GLTFLoader();
+        gltfLoader.load('/glasses/scene.gltf', (gltf) => {
+            glassesModel = new THREE.Object3D(); // Create an empty container
+            const model = gltf.scene;
+        
+            // Adjust model's position to center it within the container
+            model.position.set(0.2, 0.7, 0); // Adjust these values based on your model's dimensions
+            model.scale.set(0.2, 0.2, 0.2);
+            glassesModel.add(model); // Add the model to the container
+            scene.add(glassesModel); // Add the container to the scene
+            glassesModel.rotation.x = 0.5;
+            glassesModel.rotation.y = 0.5;
+        });
+    
+        // Cube for comparison
         const cubeGeo = new THREE.BoxGeometry(3, 1, 3);
         const cubeMaterial = new THREE.MeshStandardMaterial({ color: "#000000" });
         const rotatingCube = new THREE.Mesh(cubeGeo, cubeMaterial);
         rotatingCube.position.y = 1.5;
         rotatingCube.position.z = 0.3;
-        rotatingCube.position.x = 0;
-
-
         rotatingCube.rotation.x = 0.5;
         rotatingCube.rotation.y = 0.5;
-        scene.add(rotatingCube);
-
+        // scene.add(rotatingCube);
+    
+        // Pedestal setup
         const glassMaterial = new THREE.MeshPhysicalMaterial({
             roughness: 0.6, 
-            opacity: 0.2, 
-            transmission: 0.8, 
+            opacity: 0.3, 
+            transmission: 0.75, 
             clearcoat: 0.5, 
-            ior: 1.5, 
+            ior: 1, 
         });
         const pedestalGeo = new THREE.BoxGeometry(4.5, 1.5, 4.5);
         const pedestal = new THREE.Mesh(pedestalGeo, glassMaterial);
@@ -69,14 +82,12 @@ export default function LandingPage({
         pedestal.rotation.x = 0.5;
         pedestal.rotation.y = 0.7;
         scene.add(pedestal);
-
-        // Renderer with transparent background
+    
         const renderer = new THREE.WebGLRenderer({ alpha: true });
         if (cubeRef.current) {
             cubeRef.current.appendChild(renderer.domElement);
         }
-
-        // Resize function
+    
         const resizeRendererToDisplaySize = () => {
             if (cubeRef.current) {
                 const width = cubeRef.current.clientWidth;
@@ -86,29 +97,33 @@ export default function LandingPage({
                 camera.updateProjectionMatrix();
             }
         };
-
-        // Resize Observer
+    
         const resizeObserver = new ResizeObserver(() => {
             resizeRendererToDisplaySize();
         });
-
-        // Only observe if cubeRef.current is not null
         if (cubeRef.current) {
             resizeObserver.observe(cubeRef.current);
         }
-
-        // Animation loop
+    
         const animate = () => {
             requestAnimationFrame(animate);
+    
+            // Rotate the cube
             rotatingCube.rotation.y += 0.005;
+    
+            // Rotate the glasses model if it exists
+            if (glassesModel) {
+                glassesModel.rotation.y += 0.005;
+            }
+    
             renderer.render(scene, camera);
         };
         animate();
-
+    
         return () => {
             if (cubeRef.current) {
                 cubeRef.current.removeChild(renderer.domElement);
-                resizeObserver.unobserve(cubeRef.current); // Clean up the observer
+                resizeObserver.unobserve(cubeRef.current);
             }
             renderer.dispose();
         };
