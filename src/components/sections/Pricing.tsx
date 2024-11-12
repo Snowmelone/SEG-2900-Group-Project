@@ -89,9 +89,9 @@ export default function Pricing({
                     coming xx.xx.xxxx
                 </div>
             </Card> */}
-                <div className={`text-5xl font-bold ${jura.className} mt-10 mb-4 border-b-1 border-black/50 pb-2 `}>Pricing</div>
+            <div className={`text-5xl font-bold ${jura.className} mt-10 mb-4 border-b-1 border-black/50 pb-2 `}>Pricing</div>
 
-            <div className='grid md:grid-cols-3 grid-cols-1 mt-3 px-6 justify-center items-center w-full max-h-[800px] h-full bg-white'>
+            <div className='grid md:grid-cols-3 grid-cols-1 mt-3 px-6 justify-center items-center w-full md:max-h-[800px] h-full bg-white'>
                 <Card className='flex flex-col justify-center py-2 items-center mx-5 h-[550px]'>
                     <div className='text-4xl font-bold text-center'>
                         <div className={`${jura.className} `}>Lens</div>
@@ -101,7 +101,7 @@ export default function Pricing({
                     <div>
                         <Image className='h-48  ' src='gucciex_.jpg' />
                     </div>
-                    <Button className={ `h-10 bg-black font-bold mt-6 text-white hover:bg-white hover:text-black`} variant='faded' >Purchase Now</Button>
+                    <Button className={`h-10 bg-black font-bold mt-6 text-white hover:bg-white hover:text-black`} variant='faded' >Purchase Now</Button>
 
                 </Card>
                 <Card className='flex flex-col justify-center py-2 h-full items-center mx-5'>
@@ -113,7 +113,7 @@ export default function Pricing({
                     <div>
                         <Image className='h-48 ' src='gucciex_.jpg' />
                     </div>
-                    <Button className={ `h-10 bg-black font-bold mt-6 text-white hover:bg-white hover:text-black`} variant='faded' >Purchase Now</Button>
+                    <Button className={`h-10 bg-black font-bold mt-6 text-white hover:bg-white hover:text-black`} variant='faded' >Purchase Now</Button>
 
                 </Card>
                 <Card className='flex flex-col justify-center py-2 h-full items-center mx-5'>
@@ -125,11 +125,11 @@ export default function Pricing({
                     <div>
                         <Image className='h-48' src='gucciex_.jpg' />
                     </div>
-                    <Button className={ `h-10 bg-black font-bold mt-6 text-white hover:bg-white hover:text-black`} variant='faded' >Purchase Now</Button>
+                    <Button className={`h-10 bg-black font-bold mt-6 text-white hover:bg-white hover:text-black`} variant='faded' >Purchase Now</Button>
 
                 </Card>
             </div>
-            <div className='flex flex-col items-center w-full h-full justify-center py-16 pt-32'>
+            <div className='md:flex flex-col items-center w-full h-full justify-center py-16 pt-32 hidden '>
                 <div className={`text-5xl font-bold ${jura.className} pb-6`}>Parts</div>
                 <div className='w-full h-full flex justify-between px-16'>
 

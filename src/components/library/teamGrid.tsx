@@ -14,7 +14,7 @@ export default function TeamGrid(props: any) {
 
     return (
         <div className="flex justify-center items-center w-full md:px-16 ">
-            <div className="grid grid-cols-5  justify-center md:mt-4 z-20 w-full">
+            <div className="flex flex-wrap justify-center md:mt-4 z-20 w-full">
             {teamData?.map((item: any, index: number) => (
             <motion.div key={index} className="flex relative mx-2 w-[325px] mt-2 greyedimage rounded-lg bg-transparent blurrybg border-2 z-20  items-center justify-center cursor-pointer select-none hover:shadow-lg"
                 animate={{ y: 0, opacity: 1 }}

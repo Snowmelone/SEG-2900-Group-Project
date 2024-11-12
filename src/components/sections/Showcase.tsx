@@ -54,9 +54,9 @@ export default function Showcase({
             <div className={`mb-24 text-6xl font-bold text-gradient-grey`}>
                 What's Prism?
             </div>
-            <div className='flex justify-center items-center max-w-[1440px] w-full space-x-32 z-20'>
+            <div className='flex justify-center items-center max-w-[1440px] w-full md:space-x-32 z-20'>
                 {/* Img */}
-                <div className='w-1/2 '>
+                <div className='w-1/2 md:block hidden'>
                     <img
                         src={'/showcase1.png'}
                         alt='s'
@@ -64,7 +64,7 @@ export default function Showcase({
                     />
                 </div>
                 {/* content */}
-                <Card className='w-1/2 p-10 bg-white/30'>
+                <Card className='md:w-1/2 p-10 bg-white/30'>
                     <div className={`text-5xl font-bold text-center pb-10 ${jura.className}  text-gradient-purple `}>
                         Modular Eyewear Redefined
                     </div>
@@ -89,7 +89,7 @@ export default function Showcase({
             </div>
             <div className='flex justify-center items-center max-w-[1440px] w-full space-x-32 z-20'>
                 {/* content */}
-                <Card className='w-1/2 p-10 bg-white/30'>
+                <Card className='md:w-1/2 p-10 bg-white/30'>
                     <div className={`text-5xl font-bold text-center pb-10 ${jura.className}  text-gradient-blue `}>
                         Sustainable and Cost-Effective
                     </div>
@@ -114,7 +114,7 @@ export default function Showcase({
                     </div>
                 </Card>
                 {/* Img */}
-                <div className='w-1/2'>
+                <div className='w-1/2 md:block hidden'>
                     <img
                         src={'/showcase2.png'}
                         alt='s'
